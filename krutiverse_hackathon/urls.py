@@ -20,6 +20,7 @@ from krutiverse import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('krutiverse.urls')),
+    path('accounts/', include('allauth.urls')),
    
    
 ]

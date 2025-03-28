@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'krutiverse',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'krutiverse_hackathon.urls'
@@ -149,3 +152,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collect static files in p
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+AUTHENTICATION_BACKENDS = [
+    
+   
+    'django.contrib.auth.backends.ModelBackend',
+
+    
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
+LOGIN_REDIRECT_URL = '/'  # Where to redirect after successful login
+
+# For user registration
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'
+LOGIN_URL = 'account:login'

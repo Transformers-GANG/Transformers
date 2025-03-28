@@ -5,3 +5,4 @@ authlib ~= 1.0
 python-dotenv ~= 0.19
 requests ~= 2.27
 load_dotenv ~= 0.1
+pillow
