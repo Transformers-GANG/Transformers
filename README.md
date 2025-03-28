@@ -1,7 +1,16 @@
-# 🧠 Depression Detector using CNN
+# 🌌 Krutiverse Hackathon: Transformers Team 🚀
+
+*“More than meets the eye—coding Autobots ready to roll out!”*
+
+Welcome to the **Transformers** team page for the **Krutiverse Hackathon**! We’re a squad of four coding warriors, here to build something epic, break some barriers, and maybe sneak in a few laughs along the way. Buckle up as we take you on a journey through our project, our team, and the chaos that fuels our creativity! 💥
+
+---
+
+## 🛠️ About the Project:
+# 🧠 Human emotion and mental health detector
 
 ## 🌟 Overview
-The **Depression Detector** is an innovative machine learning project that leverages Convolutional Neural Networks (CNNs) to identify signs of depression through advanced image and text analysis. Our goal is to provide an automated, early-intervention tool for mental health assessment, offering compassionate and data-driven insights.
+The **Human Emotion and Mental Health Detector** is an innovative machine learning project that leverages Convolutional Neural Networks (CNNs) to identify signs of depression through advanced image and text analysis. Our goal is to provide an automated, early-intervention tool for mental health assessment, offering compassionate and data-driven insights.
 
 ## 🚀 Features
 - **Multi-Modal Analysis**: 
@@ -39,7 +48,14 @@ The **Depression Detector** is an innovative machine learning project that lever
 
 ## 🛠️ Setup Instructions
 
-### 1. Create a Virtual Environment
+### 1. Clone the Repo
+
+   ```bash
+   git clone https://github.com/Transformers-GANG/Transformers
+   cd Transformers
+   ```
+
+### 2. Create a Virtual Environment
 ```bash
 # Windows
 py -m venv myenv
@@ -50,12 +66,12 @@ python3 -m venv myenv
 source myenv/bin/activate
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Database Migrations
+### 4. Database Migrations
 ```bash
 # Windows
 py manage.py makemigrations
@@ -68,7 +84,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-### 4. Launch the Application
+### 5. Launch the Application
 ```bash
 # Windows
 py manage.py runserver
