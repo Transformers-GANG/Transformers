@@ -7,7 +7,6 @@ from django.urls import reverse
 from urllib.parse import quote_plus, urlencode
 
 oauth = OAuth()
-
 oauth.register(
     "auth0",
     client_id=settings.AUTH0_CLIENT_ID,
@@ -15,8 +14,20 @@ oauth.register(
     client_kwargs={
         "scope": "openid profile email",
     },
-    server_metadata_url=f"https://{settings.AUTH0_DOMAIN}/.well-known/openid-configuration",
+    server_metadata_url=f'https://{settings.AUTH0_DOMAIN}/.well-known/openid-configuration'
 )
+
+def home(request):
+    
+    return render(
+        request,
+        "krutiverse/home.html",
+        context={
+            "session": request.session.get("user"),
+            "pretty": json.dumps(request.session.get("user"), indent=4),
+        },
+    )
+
 
 def login(request):
     return oauth.auth0.authorize_redirect(
@@ -41,29 +52,36 @@ def logout(request):
             quote_via=quote_plus,
         ),
     )
-
-def home(request):
-    return render(
-        request,
-        "home.html",
-        context={
-            "session": request.session.get("user"),
-            "pretty": json.dumps(request.session.get("user"), indent=4),
-        },
-    )
     
+  
+
+def complete_profile(request):
+    return render(request, "complete_profile.html")
+
 def donor_profile(request):
-    if not request.session.get("user"):
-        return redirect('login')
-    return render(request, 'donor_profile.html', {
-        'session': request.session.get("user"),
-        'pretty': json.dumps(request.session.get("user"), indent=4)
-    })
+    return render(request, "donor_profile.html")
 
 def recipient_profile(request):
-    if not request.session.get("user"):
-        return redirect('login')
-    return render(request, 'recipient_profile.html', {
-        'session': request.session.get("user"),
-        'pretty': json.dumps(request.session.get("user"), indent=4)
-    })
+    return render(request, "recipient_profile.html")
+
+
+
+
+    # Get the user info from Auth0
+    token = oauth.auth0.authorize_access_token(request)
+    userinfo = token.get('userinfo')
+
+    # Check if user exists in our database
+    try:
+        user_profile = UserProfile.objects.get(auth0_user_id=userinfo['sub'])
+        # Existing user - redirect to appropriate dashboard
+        return redirect('donor_profile' if user_profile.is_donor else 'recipient_profile')
+    except UserProfile.DoesNotExist:
+        # New user - store auth0 user_id in session and redirect to complete profile
+        request.session['auth0_user_id'] = userinfo['sub']
+        request.session['email'] = userinfo['email']
+        request.session['name'] = userinfo.get('name', '')
+        return redirect('complete_profile')
+
+
+

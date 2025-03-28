@@ -1,0 +1,150 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+   
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Revolutionizing Blood Donation through Advanced Technology
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+                BloodConnect leverages cutting-edge AI and real-time tracking to create a seamless, efficient, and life-saving blood donation ecosystem.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="bg-brand-red-500 text-white px-6 py-3 rounded-lg hover:bg-brand-red-600 transition shadow-md">
+                    Become a Donor
+                </a>
+                <a href="#" class="bg-white text-brand-red-600 px-6 py-3 rounded-lg border border-brand-red-500 hover:bg-brand-red-50 transition">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        <div class="hidden md:block">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" class="w-full max-w-md mx-auto">
+                <path fill="#FF6384" d="M250 50c-110.5 0-200 89.5-200 200s89.5 200 200 200 200-89.5 200-200S360.5 50 250 50z"/>
+                <path fill="#FFFFFF" d="M250 150c-55.2 0-100 44.8-100 100s44.8 100 100 100 100-44.8 100-100-44.8-100-100-100zm50 110h-40v40c0 11-9 20-20 20s-20-9-20-20v-40h-40c-11 0-20-9-20-20s9-20 20-20h40v-40c0-11 9-20 20-20s20 9 20 20v40h40c11 0 20 9 20 20s-9 20-20 20z"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Key Features Section -->
+    <section id="features" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                Advanced Features of BloodConnect
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">AI-Powered Matching</h3>
+                    <p class="text-gray-600">
+                        Our advanced algorithm matches donors and recipients with unprecedented precision, considering blood type, medical history, and urgency.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Location-Based Matching</h3>
+                    <p class="text-gray-600">
+                        Real-time location tracking connects nearby donors with recipients, reducing response time in critical situations.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Emergency Response</h3>
+                    <p class="text-gray-600">
+                        Our SOS feature instantly alerts nearby compatible donors during critical medical emergencies, potentially saving lives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                Our Seamless Process
+            </h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-white p-6 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-4xl text-brand-red-500">1</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Register</h3>
+                    <p class="text-gray-600">Create a comprehensive profile with verified medical information</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-6 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-4xl text-brand-red-500">2</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Verify</h3>
+                    <p class="text-gray-600">Complete medical screening and background verification</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-6 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-4xl text-brand-red-500">3</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Match</h3>
+                    <p class="text-gray-600">Our AI finds the most compatible donor or recipient</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-6 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <span class="text-4xl text-brand-red-500">4</span>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Connect</h3>
+                    <p class="text-gray-600">Facilitate safe, secure, and efficient blood donation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">
+                Our Impact at a Glance
+            </h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-4xl font-bold text-brand-red-500 mb-3">5000+</h3>
+                    <p class="text-gray-600">Registered Donors</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-brand-red-500 mb-3">250+</h3>
+                    <p class="text-gray-600">Lives Saved</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-brand-red-500 mb-3">95%</h3>
+                    <p class="text-gray-600">Successful Matches</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-brand-red-500 mb-3">24/7</h3>
+                    <p class="text-gray-600">Emergency Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+</body>
+
+{% endblock %}
