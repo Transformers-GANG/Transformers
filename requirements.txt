@@ -1,8 +1,6 @@
-asgiref==3.8.1
-Django==5.1.7
-sqlparse==0.5.3
-authlib ~= 1.0
-python-dotenv ~= 0.19
-requests ~= 2.27
-load_dotenv ~= 0.1
-pillow
+django
+tensorflow
+opencv-python
+django-allauth
+numpy
+django-widget-tweaks
