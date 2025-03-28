@@ -9,6 +9,8 @@ Welcome to the **Transformers** team page for the **Krutiverse Hackathon**! We�
 
 ## 🛠️ About the Project:
 
+The Real-Time Blood Donation Management Web App is designed to efficiently match blood donors with recipients based on blood type, health conditions, and real-time availability. The system continuously tracks donors and recipients, ensuring that the best possible match is found and notifying both parties when a suitable match is identified.
+
 ---
 
 ## 🤖 Meet the Transformers
@@ -19,6 +21,7 @@ We’re a team of four, each bringing a unique superpower to the table. Together
 ### Aryan Khandhadiya
 ### Akshat Bhole
 ### Pradunaya Darkonde
+
 ---
 
 ## 🌟 Why We’re Here
@@ -77,7 +80,23 @@ We’re a hackathon team, so we’re not *really* looking for contributors… bu
 
 ---
 
-## 📜 License
+## 🐜 Technology Stack
+- **Frontend**: HTML, Tailwind CSS, JavaScript
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB / MySQL
+- **Real-Time Updates**: WebSockets / Firebase
+- **Notifications**: Email, SMS, or Push Notifications
+
+---
+
+## 🌍 Future Enhancements
+- AI-based predictive analytics for urgent blood requirements.
+- Integration with hospitals and blood banks.
+- Mobile application for better accessibility.
+
+---
+
+## 🌟 License
 
 This project is licensed under the **MIT License**—because we believe in sharing the love (and the code). See the [LICENSE](LICENSE) file for details.
 
@@ -94,4 +113,3 @@ Got questions, ideas, or just want to send us some virtual high-fives? Find us a
 *Built with 💻, ☕, and a dash of chaos by the Transformers team.*  
 *Krutiverse Hackathon, March 2025.*
 
----
