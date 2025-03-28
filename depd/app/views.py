@@ -8,6 +8,12 @@ from fer import FER
 from collections import Counter
 
 # Create your views here.
+import os
+from dotenv import load_dotenv
+import google.generativeai as genai
+load_dotenv()
+
+genai.configure(api_key=os.getenv('GEMINI_API_KEY')) 
 
 def home(request):
     return render(request, "app/home.html")
@@ -160,7 +166,7 @@ def phq9_view(request):
 
             # Get the dominant emotion
             dominant_emotion = max(session_data.emotion_counts, key=session_data.emotion_counts.get)
-
+            recommendation = get_recommendation(form_score, result)
             # Save the result and dominant emotion
             TestResult.objects.create(
                 user=request.user,
@@ -179,7 +185,8 @@ def phq9_view(request):
                 'score': total_score,
                 'result': result,
                 'emotion_score': session_data.emotion_score,
-                'dominant_emotion': dominant_emotion
+                'dominant_emotion': dominant_emotion,
+                'recommendation': recommendation
             })
     else:
         form = PHQ9Form()
@@ -236,3 +243,12 @@ def book_consultation(request):
         form = ConsultationBookingForm()
     
     return render(request, 'app/book_consultation.html', {'form': form})
+
+
+def get_recommendation(score, category):
+    prompt = f"Based on a PHQ-9 depression score of {score}, categorized as {category}, provide a brief 3-4 line recommendation for mental health care, focusing on self-care and professional advice."
+    model = genai.GenerativeModel("gemini-2.0-flash")
+    response = model.generate_content(prompt)
+    if response and response.text:
+        return response.text.strip().split("\n")[0:4]  # Limit to 3-4 lines
+    return "No recommendation available." 
