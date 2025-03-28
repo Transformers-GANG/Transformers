@@ -51,3 +51,19 @@ def home(request):
             "pretty": json.dumps(request.session.get("user"), indent=4),
         },
     )
+    
+def donor_profile(request):
+    if not request.session.get("user"):
+        return redirect('login')
+    return render(request, 'donor_profile.html', {
+        'session': request.session.get("user"),
+        'pretty': json.dumps(request.session.get("user"), indent=4)
+    })
+
+def recipient_profile(request):
+    if not request.session.get("user"):
+        return redirect('login')
+    return render(request, 'recipient_profile.html', {
+        'session': request.session.get("user"),
+        'pretty': json.dumps(request.session.get("user"), indent=4)
+    })

@@ -23,6 +23,7 @@ urlpatterns = [
     path("login", views.login, name="login"),
     path("logout", views.logout, name="logout"),
     path("callback", views.callback, name="callback"),
-
+    path('donor/', views.donor_profile, name='donor_profile'),
+    path('recipient/', views.recipient_profile, name='recipient_profile'), 
 ]
 
